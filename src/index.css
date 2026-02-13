@@ -1,0 +1,77 @@
+body {
+  font-family: Arial;
+  background: #f2f2f2;
+}
+
+h1 {
+  text-align: center;
+}
+
+.print-page {
+  width: 210mm;
+  height: 297mm;
+  display: grid;
+  grid-template-columns: repeat(3, 63mm);
+  grid-template-rows: repeat(3, 88mm);
+  gap: 2mm;
+  background: white;
+  margin: 10px auto;
+  padding: 10mm;
+}
+
+.proxy {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.deckinput {
+  width: 100%;
+  @media (min-width: 460px) {
+    width: 400px;
+  }
+  height: 250px;
+  resize: none;
+}
+
+.deckRegisterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardsPreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 15px;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+  background: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 18px 0;
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}

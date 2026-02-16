@@ -34,11 +34,19 @@ export default function App() {
     const parsed = parseDeck(text);
 
     const mapped = parsed.map(p => {
-      const dbCard = cards.find(c =>
+      let dbCard = cards.find(c =>
         c.id.toLowerCase() === p.name.split(" ")[0].toLowerCase()
       );
 
-      if (!dbCard) return null;
+      if (!dbCard) {
+        dbCard = cards.find(c =>
+          c.id.toLowerCase().startsWith(p.name.split(" ")[0].toLowerCase())
+        );
+
+        if (!dbCard) {
+          return null;
+        }
+      }
 
       const cardOriginalId = (() => {
         const name = (p.name.split(" ")[0] || "").split("-")
